@@ -11,9 +11,10 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
   enabled             = true
   is_ipv6_enabled     = true
-  comment             = "GTW S3 Distributions"
+  comment             = "Front S3 Distributions"
   default_root_object = "index.html"
-  aliases             = ["${var.sub_domain}.${var.domain}"]
+  aliases             = ["${var.sub_domain}.${var.domain}"] #if you want to website just open on root domain, just use "var.domain" and delete "var.subdomain" and ".". 
+                                                            #it will be: aliases = [var.domain]
   http_version        = "http3"
 
   default_cache_behavior {
@@ -60,7 +61,7 @@ resource "aws_cloudfront_origin_access_control" "s3_origin_access" {
 # Add cloudfront domain as a CNAME to cloudflayr
 resource "cloudflare_record" "add_cloudfront_domain" {
   zone_id = data.cloudflare_zone.site_domain.zone_id
-  name    = var.sub_domain
+  name    = var.sub_domain #if you want to website just open on root domain, replace "var.subdomain" with "var.domain"
   value   = aws_cloudfront_distribution.s3_distribution.domain_name
   type    = "CNAME"
 }

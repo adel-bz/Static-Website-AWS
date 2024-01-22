@@ -1,6 +1,6 @@
 # Create a Domain ACM
 resource "aws_acm_certificate" "certificate" {
-  domain_name       = "${var.sub_domain}.${var.domain}"
+  domain_name       = "*.${var.domain}"
   validation_method = "DNS"
   key_algorithm     = "RSA_2048"
 

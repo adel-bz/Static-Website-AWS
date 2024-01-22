@@ -1,8 +1,8 @@
 # Create S3 Bucket
 resource "aws_s3_bucket" "bucket_name" {
-  bucket = local.perfix
-
-  tags = local.common_tags
+  bucket        = local.perfix
+  force_destroy = true
+  tags          = local.common_tags
 
 }
 
