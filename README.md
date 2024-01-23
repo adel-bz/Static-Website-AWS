@@ -49,22 +49,37 @@ You need some permissions for your IAM user that you want to work with that to m
 # Usage
 
 ### Step 1:
-In the first step, You should create a DynamoDB table and S3 bucket. like this link: https://spacelift.io/blog/terraform-s3-backend
+clone the repository:
+```
+$ sudo git clone https://github.com/adel-bz/Static-Website-AWS.git
+```
+### Step 2:
+In the second step, You should create a DynamoDB table and S3 bucket. like this link: https://spacelift.io/blog/terraform-s3-backend
 
 Also, go to "backend.tf" file then change the terraform backend block and import your information.
 
-### Step 2:
+### Step 3:
 Change Variables in variables.tf
 
-### Step 3:
+### Step 4:
 Run these commands step by step:
 ```
-terraform init
-terraform workspace new production # To create the production environment, you can change it to dev, stage, or any environment you want.
-terraform fmt
-terraform validate
-terraform plan
-terraform apply
+$ terraform init
+$ terraform workspace new production # To create the production environment, you can change it to dev, stage, or any environment you want.
+$ terraform fmt
+$ terraform validate
+$ terraform plan
+$ terraform apply
+
+## If you want to destroy your infrastructure, use:
+$ terraform destroy
 ```
 ![domain example com (1)](https://github.com/adel-bz/Static-Website-AWS/assets/45201934/dd2a588a-dd45-43f6-b437-b235e0efe42f)
-If you want to destroy your infrastructure, use ``` terraform destroy ```
+# Contributing
+
+Contributions are welcome! Follow these steps to contribute:
+1. Fork the repository.
+2. Create a new branch: ```git checkout -b feature-name``` 
+3. Make your changes and commit them: ```git commit -m 'Add feature'```
+4. Push to the branch: ```git push origin feature-name```
+5. Submit a pull request.
