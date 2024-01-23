@@ -31,7 +31,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "encryption" {
 #############################################################
 #############################################################
 
-# Access to s3 bucket from cloudfront
+# Access to s3 bucket from CloudFront
 resource "aws_s3_bucket_policy" "access_cloudfront_to_s3_bucket" {
   bucket = aws_s3_bucket.bucket_name.id
   policy = data.aws_iam_policy_document.cloudfront_policy.json
