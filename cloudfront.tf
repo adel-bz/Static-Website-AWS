@@ -1,4 +1,4 @@
-# Create a cloudfront distribution
+# Create a CloudFront distribution
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name              = aws_s3_bucket.bucket_name.bucket_regional_domain_name
@@ -58,10 +58,10 @@ resource "aws_cloudfront_origin_access_control" "s3_origin_access" {
 #############################################################
 #############################################################
 
-# Add cloudfront domain as a CNAME to cloudflayr
+# Add CloudFront domain as a CNAME to Cloudflare
 resource "cloudflare_record" "add_cloudfront_domain" {
   zone_id = data.cloudflare_zone.site_domain.zone_id
-  name    = var.sub_domain #if you want to website just open on root domain, replace "var.subdomain" with "var.domain"
+  name    = var.sub_domain #if you want to website just open on the root domain, replace "var.subdomain" with "var.domain"
   value   = aws_cloudfront_distribution.s3_distribution.domain_name
   type    = "CNAME"
 }
