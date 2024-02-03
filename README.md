@@ -16,7 +16,7 @@ Before you begin, make sure you have the following prerequisites:
 - Cloudflare account with a domain and Cloudflare API [token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/).
 - AWS credentials configured with the necessary [permissions](https://github.com/adel-bz/Static-Website-AWS#permissions).
 > **Note:**
-> You can't use ".ir" domain name, Amazon ACM doesn't accept it.
+> You can't use ".ir" domain name, Amazon ACM doesn't support it.
 
  #### Install aws-vault on Ubuntu: 
 
@@ -45,7 +45,8 @@ You need some permissions for your IAM user that you want to work with that to m
 - Your DynamoDB table ARN
 - All Resources for other Services
 
-![Untitled design](https://github.com/adel-bz/Static-Website-AWS/assets/45201934/e54a379a-ef26-4dd1-8a9c-415ef6d8e5a1)
+![Screenshot from 2024-02-03 11-42-17](https://github.com/adel-bz/Static-Website-AWS/assets/45201934/20ccd44b-2ea4-40de-9ca7-02165e3b6c78)
+
 
 # Usage
 
