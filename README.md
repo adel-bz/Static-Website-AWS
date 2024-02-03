@@ -39,6 +39,7 @@ You need some permissions for your IAM user that you want to work with that to m
 - DynamoDB
 - CloudFront
 - ACM
+- WAF V2
 
 #### Resources
 - Your DynamoDB table ARN
